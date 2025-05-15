@@ -959,7 +959,9 @@ ScaleDiscrete <- ggproto("ScaleDiscrete", Scale,
     self$range$train(x, drop = self$drop, na.rm = !self$na.translate)
   },
 
-  transform = identity,
+  transform = function(self, x) {
+    x
+  },
 
   map = function(self, x, limits = self$get_limits()) {
     limits <- limits[!is.na(limits)]
