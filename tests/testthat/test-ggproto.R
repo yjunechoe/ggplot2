@@ -28,6 +28,6 @@ test_that("all ggproto methods start with `{` (#6459)", {
     )
   })
 
-  expect_length(sum(lengths(method_nobrackets)), 0)
+  expect_length(Filter(length, method_nobrackets), 0)
 
 })
